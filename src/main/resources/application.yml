@@ -1,14 +1,23 @@
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/vishal_db
-    username: root
-    password: root
 
-  jpa:
-    show-sql: true
-    hibernate.ddl-auto: update
-    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
 
-server:
-  port: 8080
+welcomemsg: Hello
+
+
+outofworkinghoursexperience:
+  timeValueList:
+    - locale: ja_jp,
+      timezone: JST,
+      startTime: 9:30,
+      endTime: 18:00
+    - locale: ka_KP,
+      timezone: KST,
+      startTime: 9:30,
+      endTime: 18:00
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: "*"
+
